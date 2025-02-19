@@ -20,9 +20,11 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.vtiger.genericutility.WebDriverUtility;
 import com.vtiger.genericutility.*;
-
+import com.vtiger.objectrepository.ContactsPage;
+import com.vtiger.objectrepository.DeleteContact;
 import com.vtiger.objectrepository.HomePage;
 import com.vtiger.objectrepository.LoginPage;
+import com.vtiger.objectrepository.SendMail;
 
 public class BaseClass 
 {
@@ -37,6 +39,9 @@ public class BaseClass
 	
 	public LoginPage lp;
 	public HomePage hp;
+	public ContactsPage cp;
+	public DeleteContact dc;
+	public SendMail sm;
 	
 	
 	@BeforeSuite

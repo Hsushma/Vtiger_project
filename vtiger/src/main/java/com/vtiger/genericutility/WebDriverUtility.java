@@ -117,11 +117,11 @@ public class WebDriverUtility
 	//WaitTime
 	public Timeouts implicitWait()
 	{
-		return driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(90));
+		return driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 	public WebDriverWait explictWait()
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(80));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		return wait;
 	}
 	public void maximizeWindow()

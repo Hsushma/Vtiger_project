@@ -22,6 +22,16 @@ public class CreateContactPage
 	@FindBy(name = "button")
 	private WebElement savebtn;
 	
+	@FindBy(name = "leadsource")
+	private WebElement leadSourceDropdown;
+	
+	@FindBy(xpath = "//td[text()='June, 2025']/../../..//td[text()='13']")
+	private WebElement birthdatecalender;
+	
+	public WebElement getLeadSourceDropdown() {
+		return leadSourceDropdown;
+	}
+
 	public CreateContactPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver,this);
@@ -50,6 +60,12 @@ public class CreateContactPage
 	{
 		return savebtn;
 	}
+
+	public WebElement getBirthdatecalender() 
+	{
+		return birthdatecalender;
+	}
+	
 	
 	
 	

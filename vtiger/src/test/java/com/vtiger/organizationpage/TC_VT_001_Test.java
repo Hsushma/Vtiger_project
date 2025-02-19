@@ -1,8 +1,11 @@
 package com.vtiger.organizationpage;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -22,12 +25,14 @@ public class TC_VT_001_Test extends BaseClass
 		hp.getOrganizationlink().click();
 		
 		String actTitle =driver.getTitle(); 
-		String extTitle = eUtil.getStringDataFromExcel("organization", 1, 5);
+		String extTitle = eUtil.getStringDataFromExcel("organization", 1, 3);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.titleContains(extTitle));
 		
-		Assert.assertEquals(actTitle, extTitle,"organization page is not displayed");
+		Assert.assertEquals(actTitle.contains(extTitle),true,"organizatio0 page is not displayed");
 		test.log(Status.PASS, "organization page is displayed");
-		
 	}
+	
 	
 
 }

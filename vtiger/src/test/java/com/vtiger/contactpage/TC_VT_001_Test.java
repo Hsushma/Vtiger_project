@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 import com.vtiger.genericutility.BaseClass;
 import com.vtiger.genericutility.ListnerUtility;
+import com.vtiger.objectrepository.ContactsPage;
 import com.vtiger.objectrepository.HomePage;
 
 @Listeners(ListnerUtility.class)
@@ -26,6 +27,11 @@ public class TC_VT_001_Test extends BaseClass
 		
 		Assert.assertEquals(actTitle, extTitle,"contact page is not displayed");
 		test.log(Status.PASS, "conatct page is displayed");
+		
+		cp=new ContactsPage(driver);
+		cp.getDeletebutton().click();
+		
+		
 	}
 
 }

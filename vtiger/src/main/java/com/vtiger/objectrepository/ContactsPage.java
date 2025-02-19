@@ -10,6 +10,9 @@ public class ContactsPage
 	@FindBy(xpath="//img[@title='Create Contact...']")
 	private WebElement cretatecontacticon;
 	
+	@FindBy(xpath = "(//input[@value='Delete'])[1]")
+	private WebElement deletebutton;
+	
 	public ContactsPage (WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
@@ -18,5 +21,11 @@ public class ContactsPage
 	public WebElement getCretatecontacticon() 
 	{
 		return cretatecontacticon;
-	}	
+	}
+
+	public WebElement getDeletebutton() 
+	{
+		return deletebutton;
+	}
+	
 }
